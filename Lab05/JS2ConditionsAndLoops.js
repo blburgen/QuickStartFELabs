@@ -31,7 +31,16 @@
 
 console.log(`--------------------------
 Question 1: Driving the speed limit.. ? \n`);
+let speedLimit = 45;
+let mySpeed = 40;
 
+if (mySpeed > speedLimit){
+   console.log("Slow Down! Mom is mad!");
+} else if (mySpeed == speedLimit) {
+ console.log("Everyone is happy!");
+} else {
+   console.log("Speed up! Dad is mad!");
+}
 /**
  * Step 1: Create two variables: speedLimit and mySpeed
  * Step 2: Set their values to numbers between 1 and 100.
@@ -51,7 +60,14 @@ Question 1: Driving the speed limit.. ? \n`);
 
 console.log(`--------------------------
 Question 2: Is it time to wake up for work? \n`);
+let alarmSet = false;
+let weekDay = true;
 
+if(alarmSet && weekDay){
+   console.log("Sound Alarm! Time for work!");
+} else {
+   console.log("I can sleep in!");
+}
 /**
  * Step 1: Create two variables, alarmSet and weekDay
  * Step 2: Set them to a boolean value
@@ -70,7 +86,14 @@ Question 2: Is it time to wake up for work? \n`);
 
 console.log(`--------------------------
 Question 3: Username & Password \n`);
+let username = prompt("Enter username:");
+let password = prompt("Enter password:");
 
+if((username == "Tommy123" && password == 12345)||(username=="Timmy456" && password==6789)){
+   console.log("Admin Login Successful");
+} else{
+   console.log("Admin Access Denied.");
+}
 /**
  * Step 1: Create two variables, username and password.
  * Step 2: Create a conditional/control flow statement:
@@ -88,7 +111,25 @@ Question 3: Username & Password \n`);
 
 console.log(`--------------------------
 Question 4: Student Class \n`);
+let studentClass;
+let studentGrade = 11;
 
+if(studentGrade <= 7){
+   studentClass = "Elementary";
+} else if (studentGrade <= 8){
+   studentClass = "Middle";
+} else if (studentGrade == 9) {
+   studentClass = "Freshman";
+} else if (studentGrade == 10){
+   studentClass = "Sophomore";
+} else if (studentGrade == 11){
+   studentClass = "Junior";
+} else if (studentGrade == 12){
+   studentClass = "Senior";
+} else {
+   studentClass = "Error";
+}
+console.log(studentClass);
 /**
  * Step 1: Create a variable called studentClass. Don't give it a value yet.
  *         There is a variable called studentGrade. It could be any number from 0-12.
@@ -108,7 +149,16 @@ Question 4: Student Class \n`);
 
 console.log(`--------------------------
 Question 5: Loops! \n`);
-
+for(let i=10; i >= -10; i--){
+   console.log(i);
+}
+let i=1;
+do{
+   if(i%4==0){
+      console.log(i);
+   }
+   i++;
+}while(i<=50);
 /**
  * Step 1: Write a "for loop" that will iterate backwards and print 10 to -10.
  * Step 2: Write a "do/while" loop that will prints 1 through 50.
@@ -131,11 +181,12 @@ Question 6: Debugging an infinite loop! \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-   /*    
-   for (let i = 11; i > 10; i++) { 
+      
+   for (let i = 11; i > 10; i--) { 
       console.log(i);   
    } 
-  */
+
+  
 
 
 
