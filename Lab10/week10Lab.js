@@ -41,10 +41,28 @@ Part 1: Create a form with only JavaScript`)
            You should now have a label and a input on your website.
            Do the same steps, appending a label/input for Email, and a submit button to your form.
  * ↓ YOUR CODE HERE ↓ */
+let myForm = document.createElement('form');
+let myLabel = document.createElement('label');
+let myInput = document.createElement('input');
+myLabel.innerHTML = 'Name';
+myForm.appendChild(myLabel);
+myForm.appendChild(myInput);
+document.body.appendChild(myForm);
 
-// console.log(myForm)
+let myEmailLabel = document.createElement('label');
+let myEmailInput = document.createElement('input');
+myEmailLabel.innerHTML = 'Email';
+myForm.appendChild(myEmailLabel);
+myForm.appendChild(myEmailInput);
+
+let mySubmitButton = document.createElement('button');
+mySubmitButton.innerHTML = 'Submit';
+
+myForm.appendChild(mySubmitButton);
+
+console.log(myForm)
 //Question: Besides changing the innerHTML, what other HTML things can we change using JavaScript?
-//Answer:
+//Answer: classes, ids, CSS, properties
 
 /*------------------------ Styling a form with only JavaScript------------------------*/
 console.log(`-------------------------- 
@@ -59,9 +77,13 @@ Part 2: Styling our form with only JavaScript`)
  *  Step 3: Give your form a display of flex, a flex-direction of column, and a max-width of 250px
  *
  * ↓ YOUR CODE HERE ↓ */
-
+myForm.style.backgroundColor = 'blue';
+myForm.style.color = 'white';
+myForm.style.display = 'flex';
+myForm.style.flexDirection = 'column';
+myForm.style.maxWidth = '250px';
 //Question: Do you prefer styling with JavaScript or CSS?
-//Answer:
+//Answer: CSS
 
 /*------------------------ Creating a table with only JavaScript ------------------------*/
 console.log(`-------------------------- 
@@ -79,8 +101,45 @@ Part 3: Creating a table with only JavaScript`)
 
  * Final Step: Style your table using JavaScript starting with a border. You may need to target more element/nodes than we did with myTable.
  * ↓ YOUR CODE HERE ↓ */
+let myTable = document.createElement('table');
+let myTr1 = document.createElement('tr');
+let myTr2 = document.createElement('tr');
+let myTdName = document.createElement('td');
+let myTdEmail = document.createElement('td');
+let myTdName2 = document.createElement('td');
+let myTdEmail2 = document.createElement('td');
 
-// console.log(myTable)
+myTdName.innerHTML = 'Name';
+myTdEmail.innerHTML = 'Email';
+myTdName2.innerHTML = 'Names';
+myTdEmail2.innerHTML = 'Emails';
+
+myTable.appendChild(myTr1);
+myTr1.appendChild(myTdName);
+myTr1.appendChild(myTdEmail);
+myTable.appendChild(myTr2);
+myTr2.appendChild(myTdName2);
+myTr2.appendChild(myTdEmail2);
+
+document.body.appendChild(myTable);
+
+myTable.style.border = 'solid 4px black';
+myTdEmail.style.border = 'solid 2px black';
+myTdEmail2.style.border = 'solid 2px black';
+myTdName.style.border = 'solid 2px black';
+myTdName2.style.border = 'solid 2px black';
+myTable.style.display = 'flex';
+myTable.style.maxWidth = '250px';
+myTable.style.flexDirection = 'column';
+myTdName.style.width = '125px';
+myTdEmail.style.width = '125px';
+myTr1.style.textAlign = 'center';
+myTdName2.style.width = '125px';
+myTdEmail2.style.width = '125px';
+myTr2.style.textAlign = 'center';
+
+
+console.log(myTable)
 //Question: While this is clearly a more round-about way of making a table, how can using JavaScript in this way
 //          more beneficial than HTML?
 //Answer:
@@ -103,7 +162,20 @@ Part 4: Changing our background on click`)
  * Step 7: Click the button in your index.html and see the background change!
  *
  * ↓ YOUR CODE HERE ↓ */
-
+let myButton = document.getElementById('myButton')
+myButton.style.borderRadius = '10px';
+myButton.addEventListener('click', function () {
+  document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+  myButton.style.backgroundColor = 'lightblue';
+})
+myButton.addEventListener('mouseover', function () {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+   myButton.style.backgroundColor = 'lightgray';
+ })
+ myButton.addEventListener('mouseout', function () {
+   document.body.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+   myButton.style.backgroundColor = 'white';
+ })
 //Question: What other event listeners are there?
 //             Try them out by replacing 'click' in your function above!
 //Answer:
